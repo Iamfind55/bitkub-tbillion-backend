@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+  </head>
+  <body>
+    <h1>Socket.io</h1>
+
+    <script
+      src="https://cdn.socket.io/4.7.4/socket.io.min.js"
+      integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const socket = io("http://localhost:3000");
+      // const socket = io("https://api.bitkubnek.com");
+      // const socket = io("http://139.180.152.187");
+
+      socket.on("trade", (data) => {
+        console.log("Trade")
+        console.log(data);
+      });
+
+      socket.on("withdraw", (data) => {
+        console.log("Withdraw");
+        console.log(data);
+      });
+
+      socket.on("confirm_withdraw", (data) => {
+        console.log("Confirm Withdraw");
+        console.log(data);
+      });
+
+      socket.on("deposit", (data) => {
+        console.log("Deposit");
+        console.log(data);
+      });
+      
+      socket.on("currentDate", (data) => {
+        console.log("Current date");
+        console.log(data);
+      });
+
+    </script>
+  </body>
+</html>

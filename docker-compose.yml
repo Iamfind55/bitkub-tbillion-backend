@@ -1,0 +1,11 @@
+version: '3.5'
+services:
+  trade-node-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3000"      
+    volumes:
+      - ./uploads:/usr/src/app/uploads 
+    restart: always
